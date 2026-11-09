@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>To-Do List</h1>
+    <p class="subtitle" id="counter">0 tasks left</p>
+
+    <!-- Form to add a new task -->
+    <form id="taskForm" class="task-form">
+      <label for="taskInput" class="sr-only">New task</label>
+      <input id="taskInput" type="text" placeholder="What do you need to do?" maxlength="100" autocomplete="off" required />
+      <button type="submit" class="btn-add">Add</button>
+    </form>
+
+    <!-- Filter buttons: show all, only unfinished, or only finished tasks -->
+    <div class="filters" role="group" aria-label="Filter tasks">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="active">Active</button>
+      <button class="filter" data-filter="completed">Completed</button>
+    </div>
+
+    <!-- The tasks are added here by script.js -->
+    <ul id="taskList" class="task-list"></ul>
+
+    <p id="emptyMessage" class="empty" hidden>Nothing here yet. Add your first task!</p>
+
+    <button id="clearCompleted" class="link-btn" hidden>Clear completed tasks</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
